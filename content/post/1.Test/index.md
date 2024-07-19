@@ -19,16 +19,20 @@ Test
 
 
 
+> 获取改动
 ```bash
-//获取改动
 git status
+```
 
-//添加到暂存区
+>添加到暂存区
+```bash
 git add .
-
-//发布
+```
+>发布
+```bash
 git commit -m “edit”
-
-//推送
+```
+>推送
+```bash
 git push --set-upstream origin main
 ```
