@@ -212,6 +212,13 @@ menu:
           url: https://weibo.com/yuanyue1997
           params:
               icon: brand-weibo
+
+        - identifier: email
+          name: Email
+          url: mailto:i@iyuanyue.com
+          params:
+              icon: brand-email
+
 related:
     includeNewer: true
     threshold: 60
