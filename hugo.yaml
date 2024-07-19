@@ -203,10 +203,15 @@ menu:
 
         - identifier: twitter
           name: Twitter
-          url: https://twitter.com
+          url: https://x.com/iyuanyue
           params:
               icon: brand-twitter
 
+        - identifier: weibo
+          name: Weibo
+          url: https://weibo.com/yuanyue1997
+          params:
+              icon: brand-weibo
 related:
     includeNewer: true
     threshold: 60
