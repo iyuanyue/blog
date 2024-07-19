@@ -1,6 +1,6 @@
 ---
 title: About
-description: 关于
+description: about
 date: '2024-07-19'
 aliases:
   - about-us
