@@ -7,4 +7,7 @@ menu:
             icon: user
 ---
 
-This is a test page for i18n support.
+[Email](mailto:i@iyuanyue.com)
+```
+i@iyuanyue.com
+```
