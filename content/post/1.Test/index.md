@@ -9,6 +9,7 @@ tags = [
 categories = [
     "测试"
 ]
+image: test.jpg
 +++
 
 ## en
@@ -16,3 +17,6 @@ Test
 
 ## zh
 测试
+
+## 图片
+![测试用Photo1！](test.jpg)
