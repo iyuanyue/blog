@@ -16,3 +16,19 @@ Test
 
 ## 图片
 ![测试用Photo1！](test.jpg)
+
+
+
+```bash
+//获取改动
+git status
+
+//添加到暂存区
+git add .
+
+//发布
+git commit -m “edit”
+
+//推送
+git push --set-upstream origin main
+```
