@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Category B on Yuan</title>
+        <link>http://localhost:1313/categories/category-b/</link>
+        <description>Recent content in Category B on Yuan</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Yuan</copyright><atom:link href="http://localhost:1313/categories/category-b/index.xml" rel="self" type="application/rss+xml" />
+    </channel>
+</rss>
