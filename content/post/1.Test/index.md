@@ -9,7 +9,7 @@ tags = [
 categories = [
     "测试"
 ]
-image: test.jpg
+image: "test.jpg"
 +++
 
 ## en
