@@ -1,4 +1,4 @@
-baseURL:iyuanyue.github.io/blog
+baseurl: https://blog.yy.wtf
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 3
