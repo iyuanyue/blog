@@ -1,4 +1,4 @@
-baseurl: https://example.com
+baseURL = "https://iyuanyue.github.io/blog/"
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 3
