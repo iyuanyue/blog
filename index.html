@@ -3,73 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于 - 我</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <title>关于 - Yuan</title>
+    <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 主卡片样式 */
+        .main-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        
+        /* 头部样式 */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header .title {
+            font-size: 2.5em;
+            font-weight: 300;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        /* 内容区域 */
+        .about-content {
+            padding: 40px 30px;
+        }
+        
+        /* 区块卡片 */
+        .section-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: "•";
+            color: #667eea;
+            font-size: 2em;
+            margin-right: 10px;
+        }
+        
+        /* 社交链接 */
+        .social-text {
+            margin-bottom: 20px;
+            color: #4a5568;
+            font-size: 1.1em;
+        }
+        
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #2d3748;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        
+        .social-name {
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+        
+        /* 捐赠区域 */
+        .donation-text {
+            margin-bottom: 25px;
+            color: #4a5568;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        
+        .qrcode-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .qrcode-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .qrcode-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .qrcode-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .qrcode-label {
+            font-weight: 500;
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+        
+        .donation-tip {
+            text-align: center;
+            color: #e53e3e;
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .main-card {
+                margin: 20px auto;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header .title {
+                font-size: 2em;
+            }
+            
+            .about-content {
+                padding: 30px 20px;
+            }
+            
+            .social-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .qrcode-container {
+                gap: 20px;
+            }
+            
+            .qrcode-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .qrcode-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .section-card:nth-child(1) { animation-delay: 0.1s; }
+        .section-card:nth-child(2) { animation-delay: 0.2s; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="desktop-layout">
-            <div class="desktop-main">
-                <div class="page-container">
-                    <div class="header">
-                        <span class="title">关于</span>
-                        <span class="subtitle">Yuan</span>
+        <div class="main-card">
+            <!-- 头部 -->
+            <div class="header">
+                <span class="title">关于</span>
+                <span class="subtitle">Yuan</span>
+            </div>
+            
+            <!-- 关于内容 -->
+            <div class="about-content">
+                <!-- 关注开发者 -->
+                <div class="section-card">
+                    <div class="section-title">关注开发者</div>
+                    <div class="social-content">
+                        <p class="social-text">欢迎关注我的其他平台，获取更多有趣的项目和更新：</p>
+                        <div class="social-links">
+                            <a href="https://space.bilibili.com/2313519" target="_blank" class="social-link">
+                                <img src="images/bilibili.png" alt="B站" class="social-icon">
+                                <span class="social-name">B站</span>
+                            </a>
+                            <a href="https://weibo.com/yuanyue1997" target="_blank" class="social-link">
+                                <img src="images/weibo.png" alt="微博" class="social-icon">
+                                <span class="social-name">微博</span>
+                            </a>
+                            <a href="https://www.douyin.com/user/MS4wLjABAAAA84xrPW46XnJ3JwAj6TdzeYT6BKnazLDtSecPaR926ng" target="_blank" class="social-link">
+                                <img src="images/douyin.png" alt="抖音" class="social-icon">
+                                <span class="social-name">抖音</span>
+                            </a>
+                            <a href="https://github.com/iyuanyue" target="_blank" class="social-link">
+                                <img src="images/github.png" alt="GitHub" class="social-icon">
+                                <span class="social-name">GitHub</span>
+                            </a>
+                        </div>
                     </div>
-                    <!-- 关于内容 -->
-                    <div class="about-content">
-                        <!-- 关注开发者 -->
-                        <div class="section-card">
-                            <div class="section-title">关注开发者</div>
-                            <div class="social-content">
-                                <p class="social-text">欢迎关注我的其他平台，获取更多有趣的项目和更新：</p>
-                                <div class="social-links">
-                                    <a href="https://space.bilibili.com/2313519" target="_blank" class="social-link">
-                                        <img src="images/bilibili.png" alt="B站" class="social-icon">
-                                        <span class="social-name">B站</span>
-                                    </a>
-                                    <a href="https://weibo.com/yuanyue1997" target="_blank" class="social-link">
-                                        <img src="images/weibo.png" alt="微博" class="social-icon">
-                                        <span class="social-name">微博</span>
-                                    </a>
-                                    <a href="https://www.douyin.com/user/MS4wLjABAAAA84xrPW46XnJ3JwAj6TdzeYT6BKnazLDtSecPaR926ng" target="_blank" class="social-link">
-                                        <img src="images/douyin.png" alt="抖音" class="social-icon">
-                                        <span class="social-name">抖音</span>
-                                    </a>
-                                    <a href="https://github.com/iyuanyue" target="_blank" class="social-link">
-                                        <img src="images/github.png" alt="GitHub" class="social-icon">
-                                        <span class="social-name">GitHub</span>
-                                    </a>
-                                </div>
+                </div>
+                
+                <!-- 支持开发者 -->
+                <div class="section-card">
+                    <div class="section-title">支持开发者</div>
+                    <div class="donation-content">
+                        <p class="donation-text">如果这个工具对您有帮助，欢迎请我喝杯咖啡 ☕ <br>您将出现在感谢列表中，可提供您想显示的名称。如不想出现在感谢列表，请备注。<br>您的支持是我持续改进的动力！</p>
+                        <div class="qrcode-container">
+                            <div class="qrcode-item">
+                                <img src="images/alipay-qr.jpeg" alt="支付宝捐赠" class="qrcode-image">
+                                <span class="qrcode-label">支付宝</span>
+                            </div>
+                            <div class="qrcode-item">
+                                <img src="images/wechat-qr.jpeg" alt="微信捐赠" class="qrcode-image">
+                                <span class="qrcode-label">微信</span>
                             </div>
                         </div>
-                        <!-- 支持开发者 -->
-                        <div class="section-card">
-                            <div class="section-title">支持开发者</div>
-                            <div class="donation-content">
-                                <p class="donation-text">如果这个工具对您有帮助，欢迎请我喝杯咖啡 ☕ <br>您将出现在感谢列表中，可提供您想显示的名称。如不想出现在感谢列表，请备注。<br>您的支持是我持续改进的动力！</p>
-                                <div class="qrcode-container">
-                                    <div class="qrcode-item">
-                                        <img src="images/alipay-qr.jpeg" alt="支付宝捐赠" class="qrcode-image">
-                                        <span class="qrcode-label">支付宝</span>
-                                    </div>
-                                    <div class="qrcode-item">
-                                        <img src="images/wechat-qr.jpeg" alt="微信捐赠" class="qrcode-image">
-                                        <span class="qrcode-label">微信</span>
-                                    </div>
-                                </div>
-                                <p class="donation-tip">感谢您的每一份支持！ ❤️</p>
-                            </div>
-                        </div>
-                        
+                        <p class="donation-tip">感谢您的每一份支持！ ❤️</p>
                     </div>
                 </div>
             </div>
         </div>
-    <script src="js/about.js"></script>
+    </div>
+
+    <script>
+        // 简单的交互动画
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为社交链接添加点击反馈
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // 添加滚动动画
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察所有卡片
+            document.querySelectorAll('.section-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease-out';
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>
-
-
